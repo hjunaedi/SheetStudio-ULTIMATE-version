@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SheetStudio — Website Gratis dari Google Sheets | Tanpa Hosting</title>
+<meta name="description" content="Platform no-code buat website gratis dari Google Spreadsheet. Tanpa hosting, tanpa coding. Google Apps Script + Cloudflare Pages.">
+<meta name="keywords" content="website gratis,google sheet,spreadsheet,apps script,cloudflare pages,website tanpa hosting">
+<meta name="theme-color" content="#2563EB">
+<link rel="canonical" href="https://sheet.pointru.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sheet.pointru.com/">
+<meta property="og:title" content="SheetStudio — Website Gratis dari Google Sheets">
+<meta property="og:description" content="Buat website gratis dari Google Spreadsheet. Tanpa hosting berbayar.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/style.css"></noscript>
+<style>:root{--primary:#2563EB;--text:#1a1a1a;--text-muted:#6b7280;--bg:#fff;--surface:#f9fafb;--border:#e5e7eb;--shadow:rgba(0,0,0,.1);--shadow-md:rgba(0,0,0,.15)}[data-theme=dark]{--text:#f3f4f6;--text-muted:#9ca3af;--bg:#0f172a;--surface:#1e293b;--border:#334155;--shadow:rgba(0,0,0,.3);--shadow-md:rgba(0,0,0,.5)}*,*::before,*::after{box-sizing:border-box;max-width:100%}html{overflow-x:hidden;scroll-behavior:smooth;-webkit-text-size-adjust:100%}body{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);margin:0;padding:0;overflow-x:hidden;transition:background-color .3s,color .3s}a{color:inherit;text-decoration:none}h1,h2,h3,h4,h5,h6{margin:0;font-weight:700;line-height:1.3;color:var(--text)}p{margin:0;color:var(--text-muted)}.container{max-width:1280px;margin:0 auto;padding:0 20px}.section{padding:80px 0}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);box-shadow:0 1px 3px var(--shadow)}.nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1440px;margin:0 auto;padding:0 20px}.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px}.logo__icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}.nav-links{display:flex;align-items:center;gap:8px}.nav-link{padding:8px 16px;font-size:15px;font-weight:500;color:var(--text-muted);border-radius:8px;transition:all .2s}.nav-link:hover,.nav-link--active{color:var(--text);background:var(--surface)}.nav-toggle,.theme-toggle{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--surface);border:none;color:var(--text-muted);font-size:18px;transition:all .2s}.nav-toggle:hover,.theme-toggle:hover{background:var(--primary);color:#fff}.hero{min-height:100vh;display:flex;align-items:center;padding:100px 0 80px;background:var(--bg)}.grid{display:grid;gap:60px;grid-template-columns:repeat(2,1fr);align-items:center}.badge{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;font-size:13px;font-weight:600;border-radius:999px;background:rgba(37,99,235,.1);color:var(--primary);margin-bottom:20px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:12px;transition:all .2s;cursor:pointer;border:none;min-height:48px}.btn--primary{background:var(--primary);color:#fff;box-shadow:0 4px 12px rgba(37,99,235,.3)}.btn--primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.4)}.btn--outline{border:2px solid var(--border);color:var(--text);background:transparent}.btn--outline:hover{border-color:var(--primary);color:var(--primary);background:rgba(37,99,235,.05)}.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s}.card__link{display:block;color:inherit;text-decoration:none}.card__img{aspect-ratio:16/9;background:var(--bg);overflow:hidden;position:relative}.card__img img{width:100%;height:100%;object-fit:cover}.card__badge{position:absolute;top:12px;left:12px;padding:6px 12px;background:rgba(37,99,235,.9);color:#fff;font-size:12px;font-weight:700;border-radius:999px}.card__body{padding:20px}.card__meta{font-size:13px;color:var(--text-muted);margin-bottom:8px}.card__title{font-size:18px;font-weight:700;margin-bottom:8px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.card__desc{font-size:15px;color:var(--text-muted);line-height:1.6;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:12px}.card__cta{color:var(--primary);font-weight:600;font-size:14px}#mobile-nav{position:fixed;top:70px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:0 20px;z-index:99;box-shadow:0 4px 12px var(--shadow)}#mobile-nav a{display:block;padding:14px 16px;border-radius:8px;margin-bottom:4px;color:var(--text-muted);font-weight:500}#mobile-nav a:hover,#mobile-nav a.active{color:var(--text);background:var(--surface)}.footer{background:var(--surface);border-top:1px solid var(--border);padding:60px 0 24px;margin-top:80px}.footer p{font-size:14px;color:var(--text-muted);text-align:center}@media(max-width:1024px){.nav-links{display:none}.nav-toggle{display:flex}.grid{grid-template-columns:1fr;gap:40px}.section{padding:60px 0}}@media(min-width:1025px){#mobile-nav,.nav-toggle{display:none!important}}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"SheetStudio","url":"https://sheet.pointru.com","description":"Platform no-code untuk membuat website gratis dari Google Sheets"}</script>
+</head>
+<body>
+
+<nav>
+<div class="nav">
+<a href="/" class="logo"><div class="logo__icon">📊</div><span>SheetStudio</span></a>
+<div class="nav-links">
+<a href="/" class="nav-link nav-link--active">Home</a>
+<a href="/blog.html" class="nav-link">Blog</a>
+<a href="/page.html?s=layanan" class="nav-link">Layanan</a>
+<a href="/page.html?s=pricing" class="nav-link">Pricing</a>
+<a href="/page.html?s=about" class="nav-link">About</a>
+<a href="/page.html?s=kontak" class="btn btn--primary">Kontak</a>
+</div>
+<button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+<button class="nav-toggle" aria-label="Menu">☰</button>
+</div>
+</nav>
+
+<div id="mobile-nav">
+<a href="/" class="active">Home</a>
+<a href="/blog.html">Blog</a>
+<a href="/page.html?s=layanan">Layanan</a>
+<a href="/page.html?s=pricing">Pricing</a>
+<a href="/page.html?s=demo">Demo</a>
+<a href="/page.html?s=about">About</a>
+<a href="/page.html?s=kontak">Kontak</a>
+<button class="theme-toggle" style="width:100%;justify-content:start;padding:14px 16px;background:transparent">🌙 Toggle Theme</button>
+</div>
+
+<section class="hero">
+<div class="container">
+<div class="grid">
+<div>
+<span class="badge">🚀 Platform No-Code #1</span>
+<h1 style="font-size:clamp(2.5rem,6vw,4rem);margin-bottom:20px">Buat Website <span style="color:var(--primary)">Gratis</span> dari Google Sheets</h1>
+<p style="font-size:18px;margin-bottom:32px;max-width:540px">Ubah <strong>Google Spreadsheet</strong> menjadi website profesional. Tanpa hosting berbayar, tanpa server, tanpa coding. Gratis selamanya dengan <strong>Cloudflare Pages</strong>.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px">
+<a href="/page.html?s=demo" class="btn btn--primary">Coba Demo Gratis →</a>
+<a href="/blog.html" class="btn btn--outline">Lihat Tutorial</a>
+</div>
+<div style="display:flex;gap:32px;flex-wrap:wrap">
+<div><div style="font-size:32px;font-weight:800;color:var(--primary)">10K+</div><div style="font-size:14px;color:var(--text-muted)">Website Aktif</div></div>
+<div><div style="font-size:32px;font-weight:800;color:var(--primary)">99.9%</div><div style="font-size:14px;color:var(--text-muted)">Uptime</div></div>
+<div><div style="font-size:32px;font-weight:800;color:var(--primary)">&lt;1s</div><div style="font-size:14px;color:var(--text-muted)">Load Time</div></div>
+</div>
+</div>
+<div>
+<div class="card" style="padding:32px">
+<div style="font-size:12px;font-weight:600;color:var(--text-muted);margin-bottom:16px">📊 GOOGLE SPREADSHEET</div>
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:24px">
+<div style="padding:12px;background:rgba(37,99,235,.1);border-radius:8px;border:1px solid rgba(37,99,235,.2)"><strong style="color:var(--primary)">slug:</strong> getting-started</div>
+<div style="padding:12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)"><strong>title:</strong> Panduan Mulai</div>
+<div style="padding:12px;background:var(--bg);border-radius:8px;border:1px solid var(--border)"><strong>status:</strong> <span style="color:#22c55e">published</span></div>
+</div>
+<div style="text-align:center;margin:16px 0;color:var(--text-muted)">↓ Apps Script ↓</div>
+<div style="padding:20px;background:var(--surface);border-radius:8px;font-family:monospace;font-size:13px;line-height:1.8">
+<span style="color:var(--text-muted)">// API Output:</span><br>
+<span style="color:var(--primary)">"slug"</span>: "getting-started",<br>
+<span style="color:var(--primary)">"title"</span>: "Panduan...",<br>
+<span style="color:var(--primary)">"status"</span>: "published"
+</div>
+<div style="text-align:center;margin:16px 0;color:var(--text-muted)">↓ Cloudflare Pages ↓</div>
+<button class="btn btn--primary" style="width:100%">Website Live! ✨</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:var(--surface)">
+<div class="container">
+<div style="text-align:center;margin-bottom:60px">
+<span class="badge">⚙️ Cara Kerja</span>
+<h2 style="font-size:clamp(2rem,5vw,3rem);margin-bottom:12px">Teknologi <span style="color:var(--primary)">Kami</span></h2>
+<p style="max-width:600px;margin:0 auto">Menggabungkan empat teknologi canggih untuk website gratis yang aman, cepat, dan handal</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr));gap:24px">
+<div class="card" style="padding:24px">
+<div style="width:56px;height:56px;background:rgba(37,99,235,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px">📊</div>
+<h3 style="margin-bottom:12px">Google Spreadsheet</h3>
+<p>Berfungsi sebagai <strong>CMS</strong> tempat Anda menginput teks dan gambar seperti Excel biasa.</p>
+</div>
+<div class="card" style="padding:24px">
+<div style="width:56px;height:56px;background:rgba(37,99,235,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px">⚡</div>
+<h3 style="margin-bottom:12px">Apps Script</h3>
+<p>Jembatan penghubung yang memproses data Spreadsheet menjadi format JSON real-time.</p>
+</div>
+<div class="card" style="padding:24px">
+<div style="width:56px;height:56px;background:rgba(37,99,235,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px">🐙</div>
+<h3 style="margin-bottom:12px">GitHub</h3>
+<p>Menyimpan source code website dengan aman. Version control otomatis.</p>
+</div>
+<div class="card" style="padding:24px">
+<div style="width:56px;height:56px;background:rgba(37,99,235,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px">☁️</div>
+<h3 style="margin-bottom:12px">Cloudflare Pages</h3>
+<p>Deploy website ke jaringan CDN global dengan uptime 99.9%.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div style="max-width:900px;margin:0 auto">
+<span class="badge">🏢 Tentang SheetStudio</span>
+<h2 style="font-size:clamp(2rem,5vw,3rem);margin-bottom:24px">Revolusi <span style="color:var(--primary)">Website</span> dari Spreadsheet</h2>
+<p style="font-size:18px;margin-bottom:20px">SheetStudio lahir dari kebutuhan akan efisiensi. Kami menyadari bahwa banyak pemilik bisnis yang terbebani oleh biaya server bulanan dan sistem CMS yang lambat. Oleh karena itu, kami mengembangkan solusi <strong>buat website gratis</strong> dari sisi infrastruktur server menggunakan ekosistem Google dan Cloudflare.</p>
+<p style="font-size:18px;margin-bottom:48px">Filosofi kami sederhana: data Anda harus mudah diakses dan dikelola. Dengan memanfaatkan <strong style="color:var(--primary)">Google Spreadsheet sebagai database utama</strong>, Anda memiliki kendali penuh atas konten tanpa perlu login ke dashboard admin yang rumit. Sistem ini memungkinkan siapa saja untuk memiliki <strong>website tanpa hosting berbayar</strong> namun tetap dengan performa kelas dunia.</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:24px;margin-bottom:48px">
+<div class="card" style="padding:24px">
+<h3 style="font-size:14px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px">🎯 Visi</h3>
+<p style="font-size:17px;color:var(--text)">Menjadi standar baru dalam pembuatan <strong>website cepat, efisien, dan bebas biaya server</strong> untuk UMKM global.</p>
+</div>
+<div class="card" style="padding:24px">
+<h3 style="font-size:14px;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px">🚀 Misi</h3>
+<div style="display:flex;flex-direction:column;gap:10px">
+<p style="display:flex;gap:10px"><span style="color:#22c55e">✓</span>Menyederhanakan pengelolaan konten</p>
+<p style="display:flex;gap:10px"><span style="color:#22c55e">✓</span>Menghilangkan hosting berbayar mahal</p>
+<p style="display:flex;gap:10px"><span style="color:#22c55e">✓</span>Memberdayakan bisnis dengan performa tinggi</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" style="background:var(--surface)">
+<div class="container">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:40px">
+<div><span class="badge">📚 Tutorial & Tips</span>
+<h2 style="font-size:clamp(2rem,5vw,3rem)">Artikel <span style="color:var(--primary)">Terbaru</span></h2></div>
+<a href="/blog.html" class="btn btn--outline">Lihat Semua →</a>
+</div>
+<div id="home-blog" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(320px,100%),1fr));gap:24px">
+<div class="card" style="height:280px"><div class="loader"><div class="spinner"></div></div></div>
+<div class="card" style="height:280px"><div class="loader"><div class="spinner"></div></div></div>
+<div class="card" style="height:280px"><div class="loader"><div class="spinner"></div></div></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="card" style="text-align:center;padding:80px 40px;background:linear-gradient(135deg,#2563EB,#3B82F6);color:#fff;border:none">
+<h2 style="color:#fff;margin-bottom:16px;font-size:clamp(1.8rem,4vw,2.5rem)">Siap Memiliki Website <span style="opacity:.9">Gratis?</span></h2>
+<p style="font-size:18px;opacity:.95;margin-bottom:32px;max-width:600px;margin-left:auto;margin-right:auto">Konsultasikan kebutuhan digital Anda. Tanpa biaya server, website statis gratis performa tinggi.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+<a href="/page.html?s=kontak" class="btn" style="background:#fff;color:#2563EB">Konsultasi Gratis</a>
+<a href="/page.html?s=demo" class="btn btn--outline" style="border-color:rgba(255,255,255,.5);color:#fff">Lihat Demo</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="footer">
+<div class="container">
+<p>© 2026 SheetStudio by <a href="https://pointru.com">PointRu.com</a></p>
+<p style="margin-top:8px">Website gratis dari Google Sheets</p>
+</div>
+</footer>
+
+<script defer src="/app.js"></script>
+<script>
+SheetStudio.config.apiUrl='https://script.google.com/macros/s/AKfycbwe9X_Af--lDfIpbmV12ezO7e7ZOWMOlf2uQzPaFmeP1TagPYfhEqnaPlwICf3dtZ_b/exec';
+SheetStudio.init();
+SheetStudio.renderBlogList('home-blog').catch(()=>{});
+</script>
+
+</body>
+</html>

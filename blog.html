@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blog SheetStudio — Tutorial Website Gratis Google Sheets</title>
+<meta name="description" content="Tutorial lengkap buat website gratis dari Google Sheets, Apps Script, Cloudflare Pages.">
+<link rel="icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/style.css"></noscript>
+<style>:root{--primary:#2563EB;--text:#1a1a1a;--text-muted:#6b7280;--bg:#fff;--surface:#f9fafb;--border:#e5e7eb;--shadow:rgba(0,0,0,.1);--shadow-md:rgba(0,0,0,.15)}[data-theme=dark]{--text:#f3f4f6;--text-muted:#9ca3af;--bg:#0f172a;--surface:#1e293b;--border:#334155;--shadow:rgba(0,0,0,.3);--shadow-md:rgba(0,0,0,.5)}*,*::before,*::after{box-sizing:border-box;max-width:100%}html{overflow-x:hidden}body{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);margin:0;padding:0;transition:background-color .3s,color .3s}a{color:inherit;text-decoration:none}h1,h2,h3{margin:0;font-weight:700;color:var(--text)}p{margin:0;color:var(--text-muted)}.container{max-width:1280px;margin:0 auto;padding:0 20px}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);box-shadow:0 1px 3px var(--shadow)}.nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1440px;margin:0 auto;padding:0 20px}.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px}.logo__icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px}.nav-links{display:flex;align-items:center;gap:8px}.nav-link{padding:8px 16px;font-size:15px;font-weight:500;color:var(--text-muted);border-radius:8px;transition:all .2s}.nav-link:hover,.nav-link--active{color:var(--text);background:var(--surface)}.theme-toggle,.nav-toggle{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--surface);border:none;color:var(--text-muted);font-size:18px;transition:all .2s}.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-size:15px;font-weight:600;border-radius:12px;cursor:pointer;border:none;min-height:48px}.btn--primary{background:var(--primary);color:#fff}.btn--outline{border:2px solid var(--border);color:var(--text)}.hero{padding:120px 0 60px;background:var(--surface);margin-top:70px}.badge{display:inline-flex;padding:6px 12px;font-size:13px;font-weight:600;border-radius:999px;background:rgba(37,99,235,.1);color:var(--primary);margin-bottom:20px}.input{width:100%;padding:14px 20px;font-size:15px;background:var(--bg);border:1px solid var(--border);border-radius:12px;color:var(--text);transition:all .2s}.input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px rgba(37,99,235,.1)}.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all .3s}#mobile-nav{position:fixed;top:70px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--border);padding:0 20px;z-index:99}#mobile-nav a{display:block;padding:14px 16px;border-radius:8px;margin-bottom:4px}@media(max-width:1024px){.nav-links{display:none}.nav-toggle{display:flex}}@media(min-width:1025px){#mobile-nav,.nav-toggle{display:none!important}}</style>
+</head>
+<body>
+<nav><div class="nav"><a href="/" class="logo"><div class="logo__icon">📊</div><span>SheetStudio</span></a><div class="nav-links"><a href="/" class="nav-link">Home</a><a href="/blog.html" class="nav-link nav-link--active">Blog</a><a href="/page.html?s=layanan" class="nav-link">Layanan</a><a href="/page.html?s=about" class="nav-link">About</a><a href="/page.html?s=kontak" class="btn btn--primary">Kontak</a></div><button class="theme-toggle">🌙</button><button class="nav-toggle">☰</button></div></nav>
+<div id="mobile-nav"><a href="/">Home</a><a href="/blog.html" class="nav-link--active">Blog</a><a href="/page.html?s=layanan">Layanan</a><a href="/page.html?s=about">About</a><a href="/page.html?s=kontak">Kontak</a><button class="theme-toggle" style="width:100%;justify-content:start;padding:14px 16px;background:transparent">🌙 Theme</button></div>
+<section class="hero"><div class="container" style="text-align:center"><span class="badge">📚 Knowledge Base</span><h1 style="font-size:clamp(2.5rem,6vw,4rem);margin-bottom:16px">Blog <span style="color:var(--primary)">SheetStudio</span></h1><p style="font-size:18px;max-width:600px;margin:0 auto 40px">Tutorial buat website gratis, tips Google Sheets, Apps Script, Cloudflare Pages.</p><div style="max-width:500px;margin:0 auto;position:relative"><input type="text" id="search-input" class="input" placeholder="Cari tutorial, tips, artikel..."><span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);color:var(--text-muted);font-size:18px;pointer-events:none">🔍</span></div></div></section>
+<section style="padding:80px 0"><div class="container"><div id="blog-list"></div></div></section>
+<footer style="background:var(--surface);border-top:1px solid var(--border);padding:40px 0;margin-top:80px"><div class="container" style="text-align:center"><p style="font-size:14px;color:var(--text-muted)">© 2026 SheetStudio</p></div></footer>
+<script defer src="/app.js"></script>
+<script>
+SheetStudio.config.apiUrl='https://script.google.com/macros/s/AKfycbwe9X_Af--lDfIpbmV12ezO7e7ZOWMOlf2uQzPaFmeP1TagPYfhEqnaPlwICf3dtZ_b/exec';
+SheetStudio.init();
+SheetStudio.renderBlogList('blog-list');
+let allPosts=[];
+SheetStudio.config.cache?.then?.(d=>allPosts=d.filter(i=>i.tipe==='post'));
+document.getElementById('search-input')?.addEventListener('input',function(){
+const q=this.value.toLowerCase();
+if(!q){SheetStudio.renderBlogList('blog-list');return}
+const f=allPosts.filter(p=>(p.title||'').toLowerCase().includes(q)||(p.description||'').toLowerCase().includes(q));
+document.getElementById('blog-list').innerHTML=f.length?'<div class="grid grid--3">'+f.map(SheetStudio.createBlogCard).join('')+'</div>':'<div class="empty"><p>Tidak ditemukan</p></div>'
+});
+</script>
+</body>
+</html>
