@@ -3,26 +3,105 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Artikel - SheetStudio</title>
+<title>Post - SheetStudio</title>
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="/style.css"></noscript>
-<style>:root{--primary:#2563EB;--text:#1a1a1a;--text-muted:#6b7280;--bg:#fff;--surface:#f9fafb;--border:#e5e7eb}[data-theme=dark]{--text:#f3f4f6;--text-muted:#9ca3af;--bg:#0f172a;--surface:#1e293b;--border:#334155}*{box-sizing:border-box;max-width:100%}body{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);margin:0;padding:0;transition:background-color .3s,color .3s}a{color:inherit;text-decoration:none}h1{margin:0;font-weight:700;color:var(--text)}p{margin:0;color:var(--text-muted)}.container{max-width:1280px;margin:0 auto;padding:0 20px}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1440px;margin:0 auto;padding:0 20px}.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px}.logo__icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff}.nav-links{display:flex;gap:8px}.nav-link{padding:8px 16px;font-size:15px;font-weight:500;color:var(--text-muted);border-radius:8px}.theme-toggle{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--surface);border:none}.btn{padding:14px 28px;font-size:15px;font-weight:600;border-radius:12px;border:none;cursor:pointer}.btn--primary{background:var(--primary);color:#fff}#reading-bar{position:fixed;top:70px;left:0;right:0;height:3px;background:var(--primary);transform-origin:left;transform:scaleX(0);z-index:50}@media(max-width:1024px){.nav-links{display:none}}</style>
+<style>:root{--primary:#2563EB;--text:#1a1a1a;--text-muted:#6b7280;--bg:#fff;--surface:#f9fafb;--border:#e5e7eb}[data-theme=dark]{--text:#f3f4f6;--text-muted:#9ca3af;--bg:#0f172a;--surface:#1e293b;--border:#334155}*{box-sizing:border-box;max-width:100%}body{font-family:Inter,system-ui,sans-serif;font-size:16px;line-height:1.6;color:var(--text);background:var(--bg);margin:0;padding:0;transition:background-color .3s,color .3s}a{color:inherit;text-decoration:none}h1{margin:0;font-weight:700;color:var(--text)}p{margin:0;color:var(--text-muted)}.container{max-width:1280px;margin:0 auto;padding:0 20px}nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--border)}.nav{display:flex;align-items:center;justify-content:space-between;height:70px;max-width:1440px;margin:0 auto;padding:0 20px}.logo{display:flex;align-items:center;gap:12px;font-weight:700;font-size:20px}.logo__icon{width:40px;height:40px;background:var(--primary);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff}.nav-links{display:flex;gap:8px}.nav-link{padding:8px 16px;font-size:15px;font-weight:500;color:var(--text-muted);border-radius:8px}.theme-toggle{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;cursor:pointer;background:var(--surface);border:none}.btn{padding:14px 28px;font-size:15px;font-weight:600;border-radius:12px;border:none;cursor:pointer}.btn--primary{background:var(--primary);color:#fff}#reading-bar{position:fixed;top:70px;left:0;right:0;height:3px;background:var(--primary);transform-origin:left;transform:scaleX(0);z-index:50}.loader{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:50vh;gap:16px}.spinner{width:40px;height:40px;border:3px solid var(--border);border-top-color:var(--primary);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}.error{text-align:center;padding:80px 20px}.badge{display:inline-block;padding:6px 12px;background:rgba(37,99,235,.1);color:var(--primary);border-radius:999px;font-size:13px;font-weight:600;margin-bottom:16px}.prose{max-width:720px;margin:0 auto}.prose h1,.prose h2,.prose h3{margin-top:2rem;margin-bottom:1rem;color:var(--text)}.prose p{margin-bottom:1.5rem;line-height:1.8;color:var(--text-muted)}.prose img{border-radius:12px;margin:2rem auto;max-width:100%}@media(max-width:1024px){.nav-links{display:none}}</style>
 </head>
 <body>
 <nav><div class="nav"><a href="/" class="logo"><div class="logo__icon">📊</div><span>SheetStudio</span></a><div class="nav-links"><a href="/" class="nav-link">Home</a><a href="/blog.html" class="nav-link nav-link--active">Blog</a><a href="/page.html?s=about" class="nav-link">About</a><a href="/page.html?s=kontak" class="btn btn--primary">Kontak</a></div><button class="theme-toggle">🌙</button></div></nav>
 <div id="reading-bar"></div>
-<main style="padding:100px 0 80px"><div class="container"><div id="post-content"></div></div></main>
+<main style="padding:100px 0 80px"><div class="container"><div id="post-content"><div class="loader"><div class="spinner"></div><p>Memuat artikel...</p></div></div></div></main>
 <footer style="background:var(--surface);border-top:1px solid var(--border);padding:40px 0"><div class="container" style="text-align:center"><p style="font-size:14px;color:var(--text-muted)">© 2026 SheetStudio</p></div></footer>
-<script defer src="/app.js"></script>
 <script>
-SheetStudio.config.apiUrl='https://script.google.com/macros/s/AKfycbwe9X_Af--lDfIpbmV12ezO7e7ZOWMOlf2uQzPaFmeP1TagPYfhEqnaPlwICf3dtZ_b/exec';
-SheetStudio.init();
-SheetStudio.renderPostDetail('post-content');
-window.addEventListener('scroll',()=>{const w=document.documentElement.scrollTop||document.body.scrollTop;const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;document.getElementById('reading-bar').style.transform='scaleX('+(h>0?w/h:0)+')'});
+// Inline post rendering with debugging
+(function(){
+'use strict';
+
+const API='https://script.google.com/macros/s/AKfycbwe9X_Af--lDfIpbmV12ezO7e7ZOWMOlf2uQzPaFmeP1TagPYfhEqnaPlwICf3dtZ_b/exec';
+const slug=new URLSearchParams(location.search).get('s');
+const container=document.getElementById('post-content');
+
+console.log('🔍 Loading post:',slug);
+
+if(!slug){
+  container.innerHTML='<div class="error"><h2>Post tidak ditemukan</h2><p>Parameter ?s=slug diperlukan</p><a href="/blog.html" class="btn btn--primary">Ke Blog</a></div>';
+  console.error('❌ No slug');
+}else{
+  fetch(API)
+    .then(r=>{
+      console.log('📡 Response:',r.status);
+      return r.json();
+    })
+    .then(data=>{
+      console.log('📦 Data:',data.length,'items');
+      console.log('📄 All posts:',data.filter(i=>i.tipe==='post').map(p=>p.slug).join(', '));
+      
+      const post=data.find(i=>i.slug===slug && i.tipe==='post');
+      
+      if(!post){
+        console.error('❌ Post not found:',slug);
+        container.innerHTML='<div class="error"><h2>Artikel Tidak Ditemukan</h2><p>Artikel "'+slug+'" tidak ada.</p><a href="/blog.html" class="btn btn--primary">Ke Blog</a></div>';
+      }else{
+        console.log('✅ Post found:',post.title);
+        
+        document.title=post.title+' - SheetStudio';
+        
+        const formatDate=d=>{
+          if(!d)return'';
+          const date=new Date(d);
+          return isNaN(date)?d:date.toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'numeric'});
+        };
+        
+        container.innerHTML=`
+          <article class="post">
+            <header class="post__header">
+              ${post.label?'<span class="badge">'+post.label+'</span>':''}
+              <h1 style="font-size:2.5rem;margin-bottom:16px">${post.title}</h1>
+              ${post.description?'<p style="font-size:1.25rem;color:var(--text-muted);margin-bottom:24px">'+post.description+'</p>':''}
+              <div style="display:flex;gap:16px;font-size:14px;color:var(--text-muted);margin-bottom:32px">
+                ${post.tanggal?'<time>'+formatDate(post.tanggal)+'</time>':''}
+              </div>
+            </header>
+            ${post.image_url?'<figure style="margin:2rem 0"><img src="'+post.image_url+'" alt="'+post.title+'" style="width:100%;border-radius:12px"></figure>':''}
+            <div class="prose">
+              ${post.content||'<p>Konten kosong</p>'}
+            </div>
+          </article>
+        `;
+        
+        console.log('🎉 Post rendered!');
+      }
+    })
+    .catch(e=>{
+      console.error('❌ Error:',e);
+      container.innerHTML='<div class="error"><h2>Error</h2><p>'+e.message+'</p></div>';
+    });
+}
+
+// Reading progress
+window.addEventListener('scroll',()=>{
+  const w=document.documentElement.scrollTop||document.body.scrollTop;
+  const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+  document.getElementById('reading-bar').style.transform='scaleX('+(h>0?w/h:0)+')';
+});
+
+// Theme toggle
+const savedTheme=localStorage.getItem('theme')||'light';
+document.documentElement.setAttribute('data-theme',savedTheme);
+document.querySelector('.theme-toggle').textContent=savedTheme==='dark'?'☀️':'🌙';
+document.querySelector('.theme-toggle').addEventListener('click',()=>{
+  const current=document.documentElement.getAttribute('data-theme');
+  const next=current==='light'?'dark':'light';
+  document.documentElement.setAttribute('data-theme',next);
+  localStorage.setItem('theme',next);
+  document.querySelector('.theme-toggle').textContent=next==='dark'?'☀️':'🌙';
+});
+})();
 </script>
 </body>
 </html>
