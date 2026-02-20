@@ -172,28 +172,8 @@
 <a href="/page.html?s=kontak" class="btn" style="background:#fff;color:#2563EB">Konsultasi Gratis</a>
 <a href="/page.html?s=demo" class="btn btn--outline" style="border-color:rgba(255,255,255,.5);color:#fff">Lihat Demo</a>
 </div>
-</div>
-</div>
-</section>
-
-<footer class="footer">
-<div class="container">
-<p>© 2026 SheetStudio by <a href="https://pointru.com">PointRu.com</a></p>
-<p style="margin-top:8px">Website gratis dari Google Sheets</p>
-</div>
-</footer>
-
-
 <script>
-SheetStudio.config.apiUrl='https://script.google.com/macros/s/AKfycbwe9X_Af--lDfIpbmV12ezO7e7ZOWMOlf2uQzPaFmeP1TagPYfhEqnaPlwICf3dtZ_b/exec';
-SheetStudio.init();
-SheetStudio.renderBlogList('home-blog').catch(()=>{});
-</script>
-
-</body>
-</html>
-<script>
-// Fixed blog loading for homepage with debugging
+// Fixed blog loading for homepage - HANDLE WRAPPED RESPONSE
 (function(){
 'use strict';
 
@@ -233,8 +213,26 @@ if(container){
       console.log('📡 Home blog response:',r.status);
       return r.json();
     })
-    .then(data=>{
-      console.log('📦 Data:',data.length,'items');
+    .then(response=>{
+      // CRITICAL FIX: Handle different response formats
+      console.log('📦 Raw response type:',typeof response);
+      console.log('📦 Raw response:',response);
+      
+      // Extract data array from response
+      let data;
+      if(Array.isArray(response)){
+        data=response;
+      }else if(response.data && Array.isArray(response.data)){
+        data=response.data;
+      }else if(response.items && Array.isArray(response.items)){
+        data=response.items;
+      }else{
+        console.error('❌ Unknown response format:',response);
+        throw new Error('Response is not an array. Check Apps Script return format.');
+      }
+      
+      console.log('📦 Data array:',data.length,'items');
+      
       const posts=data.filter(i=>i.tipe==='post').slice(0,3);
       console.log('📄 Showing',posts.length,'latest posts');
       
@@ -248,11 +246,12 @@ if(container){
     })
     .catch(e=>{
       console.error('❌ Home blog error:',e);
-      container.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-muted)"><p>Gagal memuat artikel</p></div>';
+      console.error('Error stack:',e.stack);
+      container.innerHTML='<div style="text-align:center;padding:40px;color:var(--text-muted)"><p>Gagal memuat artikel</p><p style="font-size:12px;margin-top:8px">'+e.message+'</p></div>';
     });
 }
 
-// Theme
+// Theme system
 const darkMode=window.matchMedia('(prefers-color-scheme: dark)');
 const savedTheme=localStorage.getItem('theme')||'auto';
 
@@ -265,10 +264,7 @@ const applyTheme=theme=>{
 };
 
 applyTheme(savedTheme);
-
-darkMode.addEventListener('change',()=>{
-  if(savedTheme==='auto') applyTheme('auto');
-});
+darkMode.addEventListener('change',()=>{if(savedTheme==='auto')applyTheme('auto')});
 
 document.querySelectorAll('.theme-toggle').forEach(btn=>{
   btn.addEventListener('click',()=>{
@@ -283,9 +279,11 @@ document.querySelectorAll('.theme-toggle').forEach(btn=>{
 document.querySelectorAll('.nav-toggle').forEach(btn=>{
   btn.addEventListener('click',()=>{
     const nav=document.getElementById('mobile-nav');
-    if(nav) nav.classList.toggle('active');
+    if(nav)nav.classList.toggle('active');
   });
 });
 })();
 </script>
-</body></html>
+
+</body>
+</html>

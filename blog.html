@@ -96,18 +96,212 @@ document.getElementById('search').addEventListener('input',function(){
   }
 });
 
-// Theme
-const savedTheme=localStorage.getItem('theme')||'light';
-document.documentElement.setAttribute('data-theme',savedTheme);
-document.querySelector('.theme-toggle').textContent=savedTheme==='dark'?'☀️':'🌙';
-document.querySelector('.theme-toggle').addEventListener('click',()=>{
-  const current=document.documentElement.getAttribute('data-theme');
-  const next=current==='light'?'dark':'light';
-  document.documentElement.setAttribute('data-theme',next);
-  localStorage.setItem('theme',next);
-  document.querySelector('.theme-toggle').textContent=next==='dark'?'☀️':'🌙';
-});
-})();
+<script>
+// Fixed blog rendering - HANDLE WRAPPED RESPONSE</script>
+<script>
+(function(){</script>
+<script>
+'use strict';</script>
+<script>
 </script>
-</body>
-</html>
+<script>
+const API='https://script.google.com/macros/s/AKfycbwe9X_Af--lDfIpbmV12ezO7e7ZOWMOlf2uQzPaFmeP1TagPYfhEqnaPlwICf3dtZ_b/exec';</script>
+<script>
+const container=document.getElementById('blog-list');</script>
+<script>
+let allPosts=[];</script>
+<script>
+</script>
+<script>
+console.log('🔍 Loading blog...');</script>
+<script>
+</script>
+<script>
+const formatDate=d=>{</script>
+<script>
+  if(!d)return'';</script>
+<script>
+  const date=new Date(d);</script>
+<script>
+  return isNaN(date)?d:date.toLocaleDateString('id-ID',{year:'numeric',month:'long',day:'numeric'});</script>
+<script>
+};</script>
+<script>
+</script>
+<script>
+const createCard=post=>`</script>
+<script>
+  <article class="card"></script>
+<script>
+    <a href="/post.html?s=${post.slug}" style="display:block;color:inherit;text-decoration:none"></script>
+<script>
+      ${post.image_url?`</script>
+<script>
+        <div class="card__img"></script>
+<script>
+          <img src="${post.image_url}" alt="${post.title}" loading="lazy"></script>
+<script>
+          <span class="card__badge">${post.label||'Article'}</span></script>
+<script>
+        </div></script>
+<script>
+      `:''}</script>
+<script>
+      <div class="card__body"></script>
+<script>
+        ${post.tanggal?'<time style="font-size:13px;color:var(--text-muted);display:block;margin-bottom:8px">'+formatDate(post.tanggal)+'</time>':''}</script>
+<script>
+        <h3 class="card__title">${post.title}</h3></script>
+<script>
+        ${post.description?'<p class="card__desc">'+post.description+'</p>':''}</script>
+<script>
+        <span style="color:var(--primary);font-weight:600;font-size:14px">Baca →</span></script>
+<script>
+      </div></script>
+<script>
+    </a></script>
+<script>
+  </article></script>
+<script>
+`;</script>
+<script>
+</script>
+<script>
+const renderPosts=posts=>{</script>
+<script>
+  if(posts.length===0){</script>
+<script>
+    container.innerHTML='<div style="text-align:center;padding:80px 20px;color:var(--text-muted)"><p>Tidak ada artikel ditemukan</p></div>';</script>
+<script>
+  }else{</script>
+<script>
+    container.innerHTML='<div class="grid">'+posts.map(createCard).join('')+'</div>';</script>
+<script>
+  }</script>
+<script>
+};</script>
+<script>
+</script>
+<script>
+fetch(API)</script>
+<script>
+  .then(r=>{</script>
+<script>
+    console.log('📡 Response:',r.status);</script>
+<script>
+    return r.json();</script>
+<script>
+  })</script>
+<script>
+  .then(response=>{</script>
+<script>
+    // CRITICAL FIX: Handle different response formats</script>
+<script>
+    console.log('📦 Raw response type:',typeof response);</script>
+<script>
+    </script>
+<script>
+    let data;</script>
+<script>
+    if(Array.isArray(response)){</script>
+<script>
+      data=response;</script>
+<script>
+    }else if(response.data && Array.isArray(response.data)){</script>
+<script>
+      data=response.data;</script>
+<script>
+    }else if(response.items && Array.isArray(response.items)){</script>
+<script>
+      data=response.items;</script>
+<script>
+    }else{</script>
+<script>
+      console.error('❌ Unknown response format:',response);</script>
+<script>
+      throw new Error('Response is not an array. Check Apps Script return format.');</script>
+<script>
+    }</script>
+<script>
+    </script>
+<script>
+    console.log('📦 Data array:',data.length,'items');</script>
+<script>
+    allPosts=data.filter(i=>i.tipe==='post');</script>
+<script>
+    console.log('📄 Posts found:',allPosts.length);</script>
+<script>
+    console.log('Slugs:',allPosts.map(p=>p.slug).join(', '));</script>
+<script>
+    </script>
+<script>
+    renderPosts(allPosts);</script>
+<script>
+    console.log('🎉 Blog rendered!');</script>
+<script>
+  })</script>
+<script>
+  .catch(e=>{</script>
+<script>
+    console.error('❌ Error:',e);</script>
+<script>
+    container.innerHTML='<div style="text-align:center;padding:80px 20px"><h2>Error</h2><p>'+e.message+'</p></div>';</script>
+<script>
+  });</script>
+<script>
+</script>
+<script>
+// Search</script>
+<script>
+document.getElementById('search').addEventListener('input',function(){</script>
+<script>
+  const q=this.value.toLowerCase();</script>
+<script>
+  if(!q){</script>
+<script>
+    renderPosts(allPosts);</script>
+<script>
+  }else{</script>
+<script>
+    const filtered=allPosts.filter(p=></script>
+<script>
+      (p.title||'').toLowerCase().includes(q)||</script>
+<script>
+      (p.description||'').toLowerCase().includes(q)||</script>
+<script>
+      (p.label||'').toLowerCase().includes(q)</script>
+<script>
+    );</script>
+<script>
+    renderPosts(filtered);</script>
+<script>
+  }</script>
+<script>
+});</script>
+<script>
+</script>
+<script>
+// Theme</script>
+<script>
+const savedTheme=localStorage.getItem('theme')||'light';</script>
+<script>
+document.documentElement.setAttribute('data-theme',savedTheme);</script>
+<script>
+document.querySelector('.theme-toggle').textContent=savedTheme==='dark'?'☀️':'🌙';</script>
+<script>
+document.querySelector('.theme-toggle').addEventListener('click',()=>{</script>
+<script>
+  const current=document.documentElement.getAttribute('data-theme');</script>
+<script>
+  const next=current==='light'?'dark':'light';</script>
+<script>
+  document.documentElement.setAttribute('data-theme',next);</script>
+<script>
+  localStorage.setItem('theme',next);</script>
+<script>
+  document.querySelector('.theme-toggle').textContent=next==='dark'?'☀️':'🌙';</script>
+<script>
+});</script>
+<script>
+})();</script>
+</body></html>
